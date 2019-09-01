@@ -1,3 +1,4 @@
+import frame.FrameMonitor;
 import fs.Files;
 
 import javax.swing.*;
@@ -21,5 +22,7 @@ public class Main {
 
         main.leftTable.setModel(new DefaultTableModel(Files.getFiles(System.getProperty("user.dir")), Files.TABLE_COLUMNS));
         main.rightTable.setModel(new DefaultTableModel(Files.getFiles(System.getProperty("user.dir")), Files.TABLE_COLUMNS));
+
+        FrameMonitor.registerFrame(frame, Main.class.getName(), 10, 10, 10, 10);
     }
 }
